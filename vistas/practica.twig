@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>TWIG</title>
+</head>
+<body>
+
+    {% if verdad %}
+    <h1>Estoy disponible</h1>
+    {% else %}
+    <h1>No estoy disponible</h1>
+    {% endif %}
+
+    {% if persona.nombre %}
+    <p>Nombre: {{ persona.nombre|title }}</p>
+    {% else %}
+    <p>La variable no se encuentra </p>
+    {% endif %}
+
+    {% if persona.dni %}
+    <p>DNI: {{ persona.dni|title }}</p>
+    {% else %}
+    <p>La variable no se encuentra </p>
+    {% endif %}
+
+</body>
+</html>

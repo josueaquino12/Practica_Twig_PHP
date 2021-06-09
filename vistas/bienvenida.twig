@@ -1,0 +1,66 @@
+{# definicion de variable en twig#}
+
+{% set tuig = 'aprendiendo Twig'%}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<title>TWIG</title>
+</head>
+<body>
+
+<h1 style="color:red">Hola a {{ todo }}, {{ saludo }}, {{tuig}}</h1>
+<p>Mi nombre es {{persona.nombre|title }} {{persona.apellido|upper }}, tengo {{persona['edad']}} años</p>
+
+<p>
+    {% filter title %}
+    Twig es un motor de plantilla para el lenguaje de programación PHP. Su sintaxis origina de Jinja y 
+    las plantillas Django. Es un producto de código abierto autorizado bajo Licencia BSD y mantenido 
+    por Fabien Potencier.​ La versión inicial estuvo creada por Armin Ronacher.
+    {% endfilter %}
+</p>
+
+<code>
+    {{persona|json_encode}}
+</code>
+
+<br>
+
+<div class="row">
+        <div class="col">
+                <h2>Iteraciones - For</h2>
+                <ul>
+                {%for valor in animales%}
+                  <li> {{valor|title}} </li>
+                {% endfor%}
+                </ul>
+        </div>
+        <div class="col">
+                <h2>Secuencia de numeros</h2>
+                <ul>
+                {%for num in 0..15 %}
+                  <li> {{num}} </li>
+                {% endfor%}
+                </ul>
+        </div>
+        <div class="col">
+                <h2>Secuencia de letra</h2>
+                <ul>
+                {%for letra in 'c'..'l' %}
+                  <li> {{letra}} </li>
+                {% endfor%}
+                </ul>
+          
+        </div>
+      </div>
+
+
+
+
+</body>
+</html>
